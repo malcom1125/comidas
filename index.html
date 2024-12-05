@@ -1,13 +1,93 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Sabor - Restaurante</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/cart.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">El Sabor</div>
+        <div class="nav-links">
+            <a href="#promociones">Promociones</a>
+            <div class="dropdown">
+                <button class="dropbtn">Categorías</button>
+                <div class="dropdown-content">
+                    <a href="#asados">Asados</a>
+                    <a href="#salchipapas">Salchipapas</a>
+                    <a href="#hamburguesas">Hamburguesas</a>
+                    <a href="#pizzas">Pizzas</a>
+                    <a href="#desgranados">Desgranados</a>
+                </div>
+            </div>
+            <a href="#sancochos">Sancochos</a>
+        </div>
+        <button class="cart-btn" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>El Sabor</h1>
+            <p>La mejor comida casera y a la parrilla</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Categories -->
+        <section id="promociones" class="category-section">
+            <h2>Promociones</h2>
+            <div class="products-grid"></div>
+        </section>
+
+        <section id="asados" class="category-section">
+            <h2>Asados</h2>
+            <div class="products-grid"></div>
+        </section>
+
+        <section id="salchipapas" class="category-section">
+            <h2>Salchipapas</h2>
+            <div class="products-grid"></div>
+        </section>
+
+        <section id="hamburguesas" class="category-section">
+            <h2>Hamburguesas</h2>
+            <div class="products-grid"></div>
+        </section>
+
+        <section id="pizzas" class="category-section">
+            <h2>Pizzas</h2>
+            <div class="products-grid"></div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Carrito de Compras</h3>
+            <button onclick="toggleCart()" class="close-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">$0</span>
+            </div>
+            <button onclick="checkout()" class="checkout-btn">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>
